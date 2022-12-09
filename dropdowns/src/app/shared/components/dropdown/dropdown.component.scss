@@ -1,0 +1,84 @@
+.select-menu {
+    width: 360px;
+    margin: 128px auto;
+
+    .select-btn {
+        position: relative;
+        top: -90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 55px;
+        background: white;
+        color: #333;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+        font-weight: bold;
+
+        .arrow-icon {
+            transition: 1s;
+            transform-origin: center;
+            font-size: 16px;
+        }
+
+        &.active {
+            .arrow-icon {
+                transform: rotate(180deg);
+            }
+
+            &~.list .option {
+                transition: transform .5s ease-in-out, margin-bottom .2s ease-in-out, opacity .5s ease-in-out;
+                transition-delay: calc(.1s * var(--i));
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .list {
+        position: absolute;
+        width: 360px;
+        transform: translateY(-90px);
+        margin-top: 10px;
+
+        .option {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 55px;
+            background: #fff;
+            padding: 0 16px;
+            cursor: pointer;
+            transform-origin: top;
+            opacity: 0;
+            transform: scale(0) translateY(-65px);
+            margin-bottom: -55px;
+            transition: transform .5s ease-in-out, margin-bottom .5s ease-in-out, opacity .5s ease-in-out;
+            transition-delay: calc(.1s * var(--i));
+
+            .option-text {
+                font-size: 18px;
+                font-weight: 600;
+                color: #333;
+            }
+
+            &:hover {
+                background: #f2f2f2;
+            }
+
+            &:nth-child(1) {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+
+            &:nth-child(5) {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div class="select-menu">
+  <div class="select-btn" appDropdownClick id="select-btn">
+    <span id="text">{{title}}</span>
+    <fa-icon class="arrow-icon" [icon]="icon"></fa-icon>
+  </div>
+
+  <ul class="list">
+    <li appDropdownClick *ngFor="let item of data; let i = index" class="option" (click)="setTitle(item.name)" style="--i:{{5-i}}">
+      <span class="option-text">{{item.name}}</span>
+    </li>
+
+  </ul>
+</div>

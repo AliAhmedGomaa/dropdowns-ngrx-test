@@ -1,0 +1,13 @@
+<section class="tabs">
+    <div class="tab" [routerLink]="[ '/countries' ]" [ngClass]="{'active': selectedTab === 'countries'}" (click)="setCurrentTab('countries')">
+        countries
+    </div>
+    <div class="tab" [routerLink]="[ '/courses' ]" [ngClass]="{'active': selectedTab === 'courses'}" (click)="setCurrentTab('courses')">
+        courses
+    </div>
+    <div class="tab" [routerLink]="[ '/products' ]"  [ngClass]="{'active': selectedTab === 'products'}" (click)="setCurrentTab('products')">
+        products
+    </div>
+</section>
+
+
